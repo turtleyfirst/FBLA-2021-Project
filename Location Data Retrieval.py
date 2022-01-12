@@ -1,12 +1,13 @@
 import requests
 typeI = 'doctor'
+keyword = ''
 # accepted types: https://developers.google.com/maps/documentation/places/web-service/supported_types
 radius = '10000'
 coord1 = '39.5481' #lattitude
 coord2 = '-104.9739' #longitude
 location = coord1 + '%2C' + coord2 #compiles coordinate into usable
 API_KEY = 'AIzaSyCmvD0GGssDQbaKG6U6xscR7p81FqRGmr8' #API access key
-url1 = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?" + "location=" + location + "&radius=" + radius + "&type=" + typeI + "&key=" + API_KEY
+url1 = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?" + "location=" + location + "&radius=" + radius + "&type=" + typeI + "&keyword=" + keyword + "&key=" + API_KEY
 
 payload={} #bullshit
 headers = {} #more bullshit
