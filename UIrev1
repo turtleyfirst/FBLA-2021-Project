@@ -1,0 +1,40 @@
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ begin UI Code~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# the only package ya gotta download is PyQt! https://riverbankcomputing.com/software/pyqt
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~SETUP NONSENSE~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+import sys
+from PyQt5.QtWidgets import QApplication
+from PyQt5.QtWidgets import QLabel
+from PyQt5.QtWidgets import QWidget
+
+#makes a new app
+app = QApplication(sys.argv)
+#the default widget QWidget makes a window
+window = QWidget()
+window.setWindowTitle('Bad Yelp')
+
+#just for kicks(and best practices/changeability!)
+xWinSize = 1600
+yWinSize = 800
+#position on screen x & y , size x & y
+window.setGeometry(0, 0, xWinSize, yWinSize)
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~WIDGETS, LABELS, ETC~~~~~~~~~~~~~~~~~~~~~~~~~#
+#go mad with this!
+
+#adds a text box (QLabel(HTML text, parent) as a child to the window
+#basically everything we do should have the window as a parent
+pageTitle = QLabel('<h1>Bad Yelp Screen 1</h1>', parent=window)
+#you can move any window or widget with .move(coords)
+pageTitle.move(20, 10)
+
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~EXECUTION STUFF~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+window.show()
+
+#runs the main loop for the app
+sys.exit(app.exec_())
+
